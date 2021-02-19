@@ -11,9 +11,9 @@ All that is required is to run the program and the graphed solutions will appear
 
 To ensure this program runs properly, be sure to have the following libraries:
 
-numpy
-matplotlib
-math
+* numpy
+* matplotlib
+* math
 
 If these are not installed the program will not run. These programs can be installed in the terminal via pip, or in Anaconda.
 
