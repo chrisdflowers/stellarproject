@@ -21,7 +21,7 @@ If these are not installed the program will not run. These programs can be insta
 * [Python 3.7.3](https://www.python.org/doc/) - The programming language used
 * [Numpy](https://numpy.org/doc/) - A library for numerical computing in Python
 * [Matplotlib](https://matplotlib.org/stable/contents.html) - A library for plotting data in Python
-* [math](https://docs.python.org/3/library/math.html) - A library for plotting data in Python
+* [math](https://docs.python.org/3/library/math.html) - A library for various mathematical functions in Python
 
 ## Authors
 
