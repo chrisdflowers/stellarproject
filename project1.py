@@ -1,8 +1,10 @@
 # ------------------------------------------------------------------------- #
 #  File: project1.py                                                        #
 #  Author: Christopher Flowers                                              # 
-#  Date: 2012-02-19                                                         #
-#  Purpose: To solve the Lane-Emden equation numerically via RK2 and plot.  #
+#  Date: 2021-02-19                                                         #
+#  Purpose: To solve the Lane-Emden equation numerically (with some         #
+#           analytical solutions for comparison) via RK2 and plot.          #
+#                                                                           #
 # ------------------------------------------------------------------------- #
 
 # -------------------- #
