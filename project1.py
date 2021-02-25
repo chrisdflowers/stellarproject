@@ -22,7 +22,7 @@ import csv
 
 h = 0.01                 # Step size
 indexes = [1.5,3,3.25]   # Polytropic indexes to solve numerically
-ps_end = 1               # Where to end power series, it is set to 1 since that is where the term stops going to infinity
+ps_end = 0.01               # Where to end power series, it is set to 1 since that is where the term stops going to infinity
 
 ps = lambda xi,n : 1 - (1/6)*xi**2 + (n/120)*xi**4     # Lambda function for theta power series
 dps = lambda xi,n : -(1/3)*xi + (n/30)*xi**3           # Lambda function for derivative of power series (to obtain dθ/dt for initial value of numerical solution)
@@ -53,7 +53,8 @@ def rk2(f,x,t,n,tau):                     # 2nd order Runge-Kutta method, or Mid
 # ------------- #
 
 for j in range(len(indexes)):                                       # Loop through polytropic indexes
-    theta[j] = [ps(z,indexes[j]) for z in np.arange(0,ps_end+h,h)]  # Calculate the power series solution up to 1 for a given n-value
+    theta[j] = [ps(z,indexes[j]) for z in np.arange(0,ps_end+h,h)]  # Calculate the power series solution for one stpe for a given n-value
+    print(theta[j])
     x = np.array([theta[j][-1],dps(ps_end,indexes[j])])             # Numpy array of the initial conditions of theta and v, is required to be a NP array for vector purposes
     for i in range(len(xi)):                                      # Loop to numerically solve for a given polytropic index
         prev_x = x                                                  # Save last solution for use in the next iteration
@@ -105,12 +106,12 @@ print("The value of ξ at the x-intercept of the polytrope for n = 3.25 is ",xi[
 # ---------------------- #
 
 # Transform xi solution for n = 3.25 to units of solar radii
-alpha = 8.91E9
+alpha = 8.71E9
 Rsol = 6.96E10
 r = alpha*np.array(xi[0:len(theta[2])])/Rsol
 
 # Transform theta solution for n = 3.25 to units of g/cm
-rho_c = 111.67
+rho_c = 123.53
 rho = rho_c*np.array(theta[2])**3.25
 
 # Import CSV file to obtain solar model values
