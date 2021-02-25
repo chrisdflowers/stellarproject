@@ -14,6 +14,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import csv
 
 # -------------------- #
 # Solution Parameters  #
@@ -98,3 +99,40 @@ plt.show()   # Show the plot
 
 print("The value of dθ/dξ at the x-intercept of the polytrope for n = 3.25 is ",v[-1][-1])    # This is present to obtain a numerical value for Question 2a.
 print("The value of ξ at the x-intercept of the polytrope for n = 3.25 is ",xi[len(theta[-1])-1])    # This is present to obtain a numerical value for Question 2a.
+
+# ---------------------- #
+#   Question 3 Plotting  #
+# ---------------------- #
+
+# Transform xi solution for n = 3.25 to units of solar radii
+alpha = 8.91E9
+Rsol = 6.96E10
+r = alpha*np.array(xi[0:len(theta[2])])/Rsol
+
+# Transform theta solution for n = 3.25 to units of g/cm
+rho_c = 111.67
+rho = rho_c*np.array(theta[2])**3.25
+
+# Import CSV file to obtain solar model values
+with open("solartable.csv", 'r') as f:
+    reader = csv.reader("solartable.csv")
+    data = list(csv.reader(f, delimiter = ","))
+
+# Reverse data, pop headers out, re-reverse data to normal
+data.reverse()
+for i in range(1): data.pop()
+data.reverse()
+
+# Unpack required columns to use for plotting
+r_solmodel = [float(data[i][0]) for i in range(len(data))]
+rho_solmodel = [float(data[i][4]) for i in range(len(data))]
+
+
+plt.plot(r,rho,label='RK2 Solution, n = 3.25')  # Plot RK2 Solution
+plt.plot(r_solmodel,rho_solmodel,'o--',color = 'black',label = 'Solar Model')  # Plot solar model solution
+plt.legend(title = "Solution Type")   # Add legend
+plt.grid()  # Add grid lines.
+plt.title(r'Lane-Emden Numerical Solution for n = 3.25 and the Solar Model Solution vs. Radius') # Add title
+plt.xlabel(r'r ($R_{\odot}$)') # Add x-axis label
+plt.ylabel(r'$\rho$ (g/cm)')  # Add y-axis label
+plt.show()   # Show the plot
