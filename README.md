@@ -5,7 +5,7 @@ alongside.
 
 ## Getting Started
 
-All that is required is to run the program and the graphed solutions will appear as a new window. Close this window to terminate the program.
+All that is required is to run the program and the graphed solutions will appear as a new window. Close this window to see next plot, close last plot to terminate program. Misc. data will appear in terminal, however this is also available in the report.
 
 ### Prerequisites
 
