@@ -14,6 +14,7 @@ To ensure this program runs properly, be sure to have the following libraries:
 * numpy
 * matplotlib
 * math
+* csv
 
 If these are not installed the program will not run. These programs can be installed in the terminal via pip, or in Anaconda.
 
@@ -22,6 +23,7 @@ If these are not installed the program will not run. These programs can be insta
 * [Numpy](https://numpy.org/doc/) - A library for numerical computing in Python
 * [Matplotlib](https://matplotlib.org/stable/contents.html) - A library for plotting data in Python
 * [math](https://docs.python.org/3/library/math.html) - A library for various mathematical functions in Python
+* [csv](https://docs.python.org/3/library/csv.html) - A library for the manipulation of spreadsheets.
 
 ## Authors
 
