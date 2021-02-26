@@ -135,5 +135,5 @@ plt.legend(title = "Solution Type")   # Add legend
 plt.grid()  # Add grid lines.
 plt.title(r'Lane-Emden Numerical Solution for n = 3.25 and the Solar Model Solution vs. Radius') # Add title
 plt.xlabel(r'r ($R_{\odot}$)') # Add x-axis label
-plt.ylabel(r'$\rho$ (g/cm)')  # Add y-axis label
+plt.ylabel(r'$\rho$ ($g \ cm^{-3}$)')  # Add y-axis label
 plt.show()   # Show the plot
