@@ -54,7 +54,6 @@ def rk2(f,x,t,n,tau):                     # 2nd order Runge-Kutta method, or Mid
 
 for j in range(len(indexes)):                                       # Loop through polytropic indexes
     theta[j] = [ps(z,indexes[j]) for z in np.arange(0,ps_end+h,h)]  # Calculate the power series solution for one stpe for a given n-value
-    print(theta[j])
     x = np.array([theta[j][-1],dps(ps_end,indexes[j])])             # Numpy array of the initial conditions of theta and v, is required to be a NP array for vector purposes
     for i in range(len(xi)):                                      # Loop to numerically solve for a given polytropic index
         prev_x = x                                                  # Save last solution for use in the next iteration
