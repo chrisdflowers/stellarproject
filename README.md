@@ -18,6 +18,8 @@ To ensure this program runs properly, be sure to have the following libraries:
 
 If these are not installed the program will not run. These programs can be installed in the terminal via pip, or in Anaconda.
 
+Also, please ensure to download the entire repository in order to obtain the CSV with data from the standard solar model.
+
 ## Built With
 * [Python 3.7.3](https://www.python.org/doc/) - The programming language used
 * [Numpy](https://numpy.org/doc/) - A library for numerical computing in Python
