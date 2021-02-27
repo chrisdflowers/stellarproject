@@ -39,7 +39,7 @@ v = [[]]*3                         # Multi-dimensional array to store each solut
 # Functions #
 # --------- #
 
-def func2(xi,x,n):       # State function
+def state(xi,x,n):       # State function
     theta,v = [x[0],x[1]]  # Unpack state variables
     return (np.array([v,-(2/xi)*v - theta**n]))  # Return derivatives
 
@@ -58,7 +58,7 @@ for j in range(len(indexes)):                                       # Loop throu
     x = np.array([theta[j][-1],dps(ps_end,indexes[j])])             # Numpy array of the initial conditions of theta and v, is required to be a NP array for vector purposes
     for i in range(len(xi)):                                      # Loop to numerically solve for a given polytropic index
         prev_x = x                                                  # Save last solution for use in the next iteration
-        x = rk2(func2,prev_x,xi[i],indexes[j],h)                  # Solve and append
+        x = rk2(state,prev_x,xi[i],indexes[j],h)                  # Solve and append
         if x[0] < 0 :                                               # Check if solution has passed through x-axis.
             break
         elif math.isnan(x[0]) == True:                              # If infinite value or non-numerical value is returned due to errors etc, remove and end solution.                                        
